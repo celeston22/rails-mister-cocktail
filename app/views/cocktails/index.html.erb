@@ -2,6 +2,9 @@
 
 <h1>All Cocktails</h1>
 
+<%= cl_image_tag("cxr3bxitfwgtkvr1wlhg",
+      width: 400, height: 300, crop: :fill) %>
+
 <table>
   <thead>
     <tr>
@@ -13,7 +16,13 @@
     <% @cocktails.each do |cocktail| %>
       <tr>
         <td><%= cocktail.name %></td>
+        <td><%= link_to 'Show', cocktail %></td>
+        <td><%= link_to 'Edit', edit_cocktail_path(cocktail) %></td>
+        <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br>
+<br>
+<%= link_to 'New Cocktail', new_cocktail_path %>
