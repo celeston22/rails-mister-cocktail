@@ -1,9 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tous les cocktails</h1>
+<h1>All Cocktails</h1>
 
-<tbody>
-    <%= @cocktails.each do |cocktail| %>
-        <li><%= cocktail.name %></li>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cocktails.each do |cocktail| %>
+      <tr>
+        <td><%= cocktail.name %></td>
+      </tr>
     <% end %>
-</tbody>
+  </tbody>
+</table>
